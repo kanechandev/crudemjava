@@ -19,11 +19,17 @@ public class Main {
 		ContatoDAO contatoDao = new ContatoDAO();
 
 		Contato contato = new Contato();
-		contato.setNome("João Gabriel");
-		contato.setIdade(78);
+		contato.setNome("Maria Gabriela Dias");
+		contato.setIdade(35);
 		contato.setDataCadastro(new Date());
 		
 		contatoDao.save(contato);
+		
+		//Visualização dos registros do banco de dados TODOS
+		
+		for(Contato c : contatoDao.getContatos()) {
+			System.out.println("Contato: "+c.getNome());
+		}
 	}
 
 }
